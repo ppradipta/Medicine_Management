@@ -96,17 +96,30 @@ import { FormsModule } from '@angular/forms'
                 </div>
               </div>
             </div>
-            <p class="text-center text-muted mt-4 mb-0">
+            <p class="text-center text-muted mt-4 mb-0 updated">
               ©
               {{ currentYear }}
-              Simple — by <span class="fw-semibold">{{ credits.name }}</span>
+              Medicine — Developed by <span class="fw-semibold">{{ credits.name }}</span>
             </p>
           </div>
         </div>
       </div>
     </div>
   `,
-  styles: ``,
+  styles: `
+  .auth-box {
+      min-height: 100vh;
+      background-image: url('/assets/images/medicine-banner.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+  }
+
+  .updated {
+    color: #ffffff !important;
+  }
+
+    `,
 })
 export class SignIn {
   protected readonly currentYear = currentYear
