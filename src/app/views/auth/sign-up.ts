@@ -17,7 +17,7 @@ import { FormsModule } from '@angular/forms'
               <div class="card-body">
                 <div class="auth-brand mb-4">
                   <app-app-logo />
-                  <p class="text-muted w-lg-75 mt-3">
+                  <p class="text-muted w-lg-100 mt-3">
                     Let’s get you started. Create your account by entering your
                     details below.
                   </p>
@@ -105,7 +105,7 @@ import { FormsModule } from '@angular/forms'
                 </p>
               </div>
             </div>
-            <p class="text-center text-muted mt-4 mb-0">
+            <p class="text-center text-muted mt-4 mb-0 updated">
               © {{ currentYear }} Simple — by
               <span class="fw-semibold">{{ credits.name }}</span>
             </p>
@@ -114,7 +114,21 @@ import { FormsModule } from '@angular/forms'
       </div>
     </div>
   `,
-  styles: ``,
+  styles: `
+
+  .auth-box {
+      min-height: 100vh;
+      background-image: url('/assets/images/medicine-banner.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+  }
+
+  .updated {
+    color: #ffffff !important;
+  }
+
+  `,
 })
 export class SignUp {
   password: string = ''

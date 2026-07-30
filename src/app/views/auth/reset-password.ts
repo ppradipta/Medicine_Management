@@ -71,7 +71,7 @@ import { AppLogo } from '@app/components/app-logo'
               </div>
             </div>
 
-            <p class="text-center text-muted mt-4 mb-0">
+            <p class="text-center text-muted mt-4 mb-0 updated">
               © {{ currentYear }} Simple — by
               <span class="fw-semibold">{{ credits.name }}</span>
             </p>
@@ -80,7 +80,21 @@ import { AppLogo } from '@app/components/app-logo'
       </div>
     </div>
   `,
-  styles: ``,
+  styles: `
+
+  .auth-box {
+      min-height: 100vh;
+      background-image: url('/assets/images/medicine-banner.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+  }
+
+  .updated {
+    color: #ffffff !important;
+  }
+
+  `,
 })
 export class ResetPassword {
   protected readonly currentYear = currentYear
