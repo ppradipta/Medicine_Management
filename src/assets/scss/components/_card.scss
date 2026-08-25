@@ -5,6 +5,7 @@
 .card {
     box-shadow: $card-box-shadow;
     margin-bottom: $spacer;
+    margin-top: $spacer;
 
   .card-body {
     transition: all 0.3s ease-in-out;
