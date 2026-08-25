@@ -30,9 +30,12 @@ export class MedicineManagement implements OnInit {
       categoryName: ['',[Validators.required, Validators.pattern('[a-zA-Z0-9]+')]],
       brandName: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]+')]],
       batchNumber: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]+')]],
-      state: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]+')]],
-      zip: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]+')]],
-      agree: ['', [Validators.required]],
+      mfgDate: ['', [Validators.required]],
+      expDate: ['', [Validators.required]],
+      quantity: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]+')]],
+      purchasePrice: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]+')]],
+      sellingPrice: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]+')]],
+      description: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]+')]],
     })
   }
 
