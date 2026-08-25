@@ -31,6 +31,8 @@ export class MedicineManagement implements OnInit {
       brandName: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]+')]],
       batchNumber: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]+')]],
       mfgDate: ['', [Validators.required]],
+      barcode: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9-]+')]],
+      medicineImage: [null, [Validators.required]],
       expDate: ['', [Validators.required]],
       quantity: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]+')]],
       purchasePrice: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]+')]],
@@ -45,6 +47,18 @@ export class MedicineManagement implements OnInit {
 
   validSubmit() {
     this.submit = true
+  }
+
+  onImageSelected(event: Event) {
+    const image = (event.target as HTMLInputElement).files?.[0] ?? null
+    this.validationform.patchValue({ medicineImage: image })
+    this.form['medicineImage'].markAsTouched()
+  }
+
+  cancelImageUpload(imageInput: HTMLInputElement) {
+    imageInput.value = ''
+    this.validationform.patchValue({ medicineImage: null })
+    this.form['medicineImage'].markAsUntouched()
   }
   
 
