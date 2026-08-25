@@ -61,4 +61,9 @@ export const VIEWS_ROUTES: Routes = [
     loadChildren: () =>
       import('./maps/maps.route').then((mod) => mod.MAPS_ROUTES),
   },
+  {
+    path: '',
+    loadChildren: () =>
+      import('./my-components/medicine-management/medicine-management.route').then((mod) => mod.MEDICINE_MANAGEMENT_ROUTES),
+  },
 ]

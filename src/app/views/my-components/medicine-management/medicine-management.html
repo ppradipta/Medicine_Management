@@ -1,0 +1,112 @@
+<app-bread-crumb />
+
+<app-ui-card title="Create Medicine">
+      <a
+        helper-text
+        href="https://getbootstrap.com/docs/5.3/forms/validation/#custom-styles"
+        target="_blank"
+        class="icon-link icon-link-hover link-secondary link-underline-secondarlink-secondary link-underline-opacity-25 fw-semibold"
+        >Medicine List
+        <ng-icon name="tablerArrowRight" class="bi fs-lg" />
+      </a>
+      <form
+        card-body
+        class="row g-3 needs-validation"
+        novalidate
+        (ngSubmit)="validSubmit()"
+        [formGroup]="validationform"
+      >
+        <div class="col-md-4">
+          <label for="validationCustom01" class="form-label">Medicine</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustom01"
+            required
+            formControlName="medicineName"
+            placeholder="Medicine Name"
+            [class]="submit && !form['medicineName'].errors ? 'is-valid' : ''"
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+
+        <div class="col-md-4">
+          <label for="validationCustom02" class="form-label">Generic</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustom02"
+            formControlName="genericName"
+            placeholder="Generic Name"
+            [class]="submit && !form['genericName'].errors ? 'is-valid' : ''"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+
+        <div class="col-md-4">
+          <label for="validationCustom02" class="form-label">Category</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustom02"
+            formControlName="categoryName"
+            placeholder="Category Name"
+            [class]="submit && !form['categoryName'].errors ? 'is-valid' : ''"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+
+        <div class="col-md-4">
+          <label for="validationCustom02" class="form-label">Brand</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustom02"
+            formControlName="brandName"
+            placeholder="Brand Name"
+            [class]="submit && !form['brandName'].errors ? 'is-valid' : ''"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+
+        <div class="col-md-4">
+          <label for="validationCustom02" class="form-label">Batch</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustom02"
+            formControlName="batchNumber"
+            placeholder="Batch Number"
+            [class]="submit && !form['batchNumber'].errors ? 'is-valid' : ''"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+
+        <div class="col-12">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="invalidCheck"
+              required
+            />
+            <label class="form-check-label" for="invalidCheck">
+              i agree to the terms and conditions
+            </label>
+            <div class="invalid-feedback">
+              You must agree before submitting.
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Submit Form</button>
+        </div>
+      </form>
+</app-ui-card>
