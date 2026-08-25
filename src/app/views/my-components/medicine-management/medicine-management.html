@@ -3,7 +3,7 @@
 <app-ui-card title="Create Medicine">
       <a
         helper-text
-        href="https://getbootstrap.com/docs/5.3/forms/validation/#custom-styles"
+        href="/medicine-management"
         target="_blank"
         class="icon-link icon-link-hover link-secondary link-underline-secondarlink-secondary link-underline-opacity-25 fw-semibold"
         >Medicine List
@@ -84,6 +84,86 @@
             required
           />
           <div class="valid-feedback">Looks good!</div>
+        </div>
+
+        <div class="col-md-4">
+          <label for="mfgDate" class="form-label">MFG Date</label>
+          <input
+            type="date"
+            class="form-control"
+            id="mfgDate"
+            formControlName="mfgDate"
+            [class]="submit && !form['mfgDate'].errors ? 'is-valid' : ''"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+
+        <div class="col-md-4">
+          <label for="mfgDate" class="form-label">EXP Date</label>
+          <input
+            type="date"
+            class="form-control"
+            id="expDate"
+            formControlName="expDate"
+            [class]="submit && !form['expDate'].errors ? 'is-valid' : ''"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+
+        <div class="col-md-4">
+          <label for="validationCustom02" class="form-label">Quantity</label>
+          <input
+            type="number"
+            class="form-control"
+            id="validationCustom02"
+            formControlName="quantity"
+            placeholder="Quantity"
+            [class]="submit && !form['quantity'].errors ? 'is-valid' : ''"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+
+        <div class="col-md-4">
+          <label for="validationCustom02" class="form-label">Purchase Price</label>
+          <input
+            type="number"
+            class="form-control"
+            id="validationCustom02"
+            formControlName="purchasePrice"
+            placeholder="Purchase Price"
+            [class]="submit && !form['purchasePrice'].errors ? 'is-valid' : ''"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+
+        <div class="col-md-4">
+          <label for="validationCustom02" class="form-label">Selling Price</label>
+          <input
+            type="number"
+            class="form-control"
+            id="validationCustom02"
+            formControlName="sellingPrice"
+            placeholder="Selling Price"
+            [class]="submit && !form['sellingPrice'].errors ? 'is-valid' : ''"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+
+        <div class="col-md-4">
+          <label for="validationCustom02" class="form-label">Description</label>
+          <textarea
+            class="form-control"
+            id="example-textarea"
+            rows="3"
+            formControlName="description"
+            placeholder="Description"
+            [class]="submit && !form['description'].errors ? 'is-valid' : ''"
+          ></textarea>
         </div>
 
         <div class="col-12">
