@@ -100,6 +100,45 @@
         </div>
 
         <div class="col-md-4">
+          <label for="barcode" class="form-label">Barcode</label>
+          <input
+            type="text"
+            class="form-control"
+            id="barcode"
+            formControlName="barcode"
+            placeholder="Barcode"
+            autocomplete="off"
+            [class]="submit && !form['barcode'].errors ? 'is-valid' : ''"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+
+        <div class="col-md-4">
+          <label for="medicineImage" class="form-label">Image</label>
+          <input
+            type="file"
+            class="form-control"
+            id="medicineImage"
+            #medicineImageInput
+            accept="image/*"
+            (change)="onImageSelected($event)"
+            [class]="submit && !form['medicineImage'].errors ? 'is-valid' : ''"
+            required
+          />
+          <div class="form-text">Upload an image of the medicine.</div>
+          <button
+            type="button"
+            class="btn btn-outline-secondary btn-sm mt-2"
+            [disabled]="!form['medicineImage'].value"
+            (click)="cancelImageUpload(medicineImageInput)"
+          >
+            Cancel Image
+          </button>
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+
+        <div class="col-md-4">
           <label for="mfgDate" class="form-label">EXP Date</label>
           <input
             type="date"
@@ -166,7 +205,7 @@
           ></textarea>
         </div>
 
-        <div class="col-12">
+        <!-- <div class="col-12">
           <div class="form-check">
             <input
               class="form-check-input"
@@ -182,11 +221,11 @@
               You must agree before submitting.
             </div>
           </div>
-        </div>
+        </div> -->
 
 
         <div class="col-12">
-          <button class="btn btn-primary" type="submit">Submit Form</button>
+          <button class="btn btn-primary" type="submit">Save</button>
         </div>
       </form>
 </app-ui-card>
