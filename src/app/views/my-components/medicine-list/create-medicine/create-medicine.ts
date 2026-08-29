@@ -1,7 +1,8 @@
 import { Component , inject, OnInit } from '@angular/core';
 import { UiCard } from '@app/components/ui-card';
 import { NgIcon } from '@ng-icons/core'
-import { BreadCrumb } from '../bread-crumb/bread-crumb';
+import { BreadCrumb } from '../../bread-crumb/bread-crumb';
+
 import {
   FormsModule,
   ReactiveFormsModule,
@@ -12,12 +13,12 @@ import {
 
 
 @Component({
-  selector: 'app-medicine-management',
-  imports: [UiCard, NgIcon,BreadCrumb,FormsModule,ReactiveFormsModule],
-  templateUrl: './medicine-management.html',
-  styleUrl: './medicine-management.scss'
+  selector: 'app-create-medicine',
+  imports: [UiCard, NgIcon,FormsModule,ReactiveFormsModule,BreadCrumb],
+  templateUrl: './create-medicine.html',
+  styleUrl: './create-medicine.scss'
 })
-export class MedicineManagement implements OnInit {
+export class CreateMedicine implements OnInit {
 
   public formBuilder = inject(UntypedFormBuilder)
   validationform!: UntypedFormGroup
@@ -60,7 +61,5 @@ export class MedicineManagement implements OnInit {
     this.validationform.patchValue({ medicineImage: null })
     this.form['medicineImage'].markAsUntouched()
   }
-  
 
 }
-
