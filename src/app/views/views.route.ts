@@ -64,6 +64,6 @@ export const VIEWS_ROUTES: Routes = [
   {
     path: '',
     loadChildren: () =>
-      import('./my-components/medicine-management/medicine-management.route').then((mod) => mod.MEDICINE_MANAGEMENT_ROUTES),
+      import('./my-components/medicine-list/medicine-list.route').then((mod) => mod.MEDICINE_LIST_ROUTES),
   },
 ]

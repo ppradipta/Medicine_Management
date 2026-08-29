@@ -1,0 +1,66 @@
+<app-bread-crumb />
+
+<div class="container-fluid">
+      <!-- <app-page-title
+        title="Exportable DataTables"
+        subTitle="Enable export options like CSV, Excel, PDF, and print using DataTables extensions for seamless data sharing."
+        [badge]="{ icon: 'lucideDownload', text: 'Data Export' }"
+      /> -->
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <app-ui-card title="Medicines">
+            <a
+              helper-text
+              href="/medicine-list/medicine-create"
+              class="icon-link icon-link-hover link-primary fw-semibold"
+              >Create Medicine
+              <ng-icon name="tablerArrowRight" class="bi fs-lg" />
+            </a>
+            <div card-body>
+              <table
+                datatable
+                [dtOptions]="dtOptions"
+                class="table table-striped align-middle mt-2 mb-0"
+              >
+                <thead class="thead-sm text-uppercase fs-xxs">
+                  <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Batch</th>
+                    <th>Expiry</th>
+                    <th>Stock</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (item of basicData; track $index) {
+                    <tr>
+                      <td>{{ item.company }}</td>
+                      <td>{{ item.symbol }}</td>
+                      <td>{{ currency }}{{ item.price }}</td>
+                      <td>{{ item.change }}%</td>
+                      <td>{{ item.volume }}</td>
+                      <td>{{ currency }}{{ item.marketCap }}</td>
+                      <td>{{ item.rating }} ★</td>
+                      <td>
+                        <span
+                          class="badge badge-label  {{
+                            item.status === 'Bullish'
+                              ? 'badge-soft-success'
+                              : 'badge-soft-danger'
+                          }} "
+                          >{{ item.status }}</span
+                        >
+                      </td>
+                    </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+          </app-ui-card>
+
+        </div>
+      </div>
+</div>

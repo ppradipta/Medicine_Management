@@ -57,7 +57,7 @@ export const userDropdownItems: UserDropdownItemType[] = [
 
 export const menuItems: MenuItemType[] = [
   { label: 'Dashboard', icon: 'lucideCircleGauge', url: '/dashboard' },
-  { label: 'Medicine', icon: 'lucideCalendar', url: '/medicine-management' },
+  { label: 'Medicine', icon: 'lucideCalendar', url: '/medicine-list/medicine-create' },
   { label: 'Inventory', icon: 'lucideCalendar', url: '/' },
   { label: 'Supplier', icon: 'lucideCalendar', url: '/' },
   { label: 'Purchase', icon: 'lucideCircleGauge', url: '/' },
