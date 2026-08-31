@@ -1,0 +1,35 @@
+:host { display: block; }
+.inventory-page { --ink: #18243e; --muted: #74809a; --line: #e9edf4; padding: 1.5rem; color: var(--ink); background: #f7f9fd; min-height: 100%;margin-top: 1rem; }
+.page-heading,.panel-heading,.features-intro,.medicine-cell,.indicator-list>div { display:flex; align-items:center; }.page-heading,.panel-heading { justify-content:space-between; gap:1rem; }.page-heading { margin-bottom:0.75rem; }.eyebrow { margin:0 0 .25rem; color:#6272d9; font-size:.74rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }h1,h2,p { margin-top:0; }h1 { margin-bottom:.4rem; font-size:clamp(1.55rem,2vw,2rem); letter-spacing:-.035em; }h2 { margin-bottom:.25rem; font-size:1.05rem; }.heading-copy,.panel-heading p,.features-intro p { margin-bottom:0; color:var(--muted); font-size:.88rem; }.add-button { border:0; border-radius:.65rem; padding:.72rem 1rem; background:#5c67d9; color:#fff; font-weight:700; box-shadow:0 7px 15px rgba(92,103,217,.23); cursor:pointer; }.add-button span { font-size:1.2rem; }
+.summary-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1rem; margin-bottom:1.35rem; }.summary-card { display:flex; gap:.8rem; padding:1.2rem; background:#fff; border:1px solid var(--line); border-radius:.85rem; box-shadow:0 4px 14px rgba(34,50,84,.035); }.card-icon { width:2.55rem;height:2.55rem;display:grid;place-items:center;flex:0 0 auto;border-radius:.7rem;background:#eef0ff;color:#5c67d9;font-weight:900;font-size:1.35rem; }.summary-card p { margin:.05rem 0 .25rem;color:var(--muted);font-size:.8rem;font-weight:600; }.summary-card strong { display:block;font-size:1.45rem;line-height:1.1; }.summary-card span { color:#9aa4b8;font-size:.72rem; }.summary-card.low .card-icon { background:#fff6df;color:#e5a421; }.summary-card.expired .card-icon { background:#ffebeb;color:#de5b61; }.summary-card.available .card-icon { background:#e9f9f0;color:#28a96a; }
+.inventory-panel,.smart-features { background:#fff;border:1px solid var(--line);border-radius:.85rem;box-shadow:0 4px 14px rgba(34,50,84,.035); }.inventory-panel { overflow:hidden; }.panel-heading { padding:1.25rem 1.3rem;border-bottom:1px solid var(--line); }.search-box { display:flex;align-items:center;width:13.5rem;padding:.55rem .7rem;gap:.4rem;border:1px solid #dfe4ee;border-radius:.5rem;color:#9aa4b8; }.search-box input { width:100%;border:0;outline:0;color:var(--ink);font:inherit;font-size:.82rem; }.table-wrap { overflow-x:auto; }table { width:100%;border-collapse:collapse;min-width:660px; }th,td { padding:1rem 1.3rem;text-align:left;border-bottom:1px solid var(--line); }th { color:#8c97aa;font-size:.68rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase; }td { color:#536078;font-size:.85rem; }tbody tr:last-child td { border-bottom:0; }.medicine-cell { gap:.65rem; }.medicine-cell strong { display:block;color:var(--ink);font-size:.86rem; }.medicine-cell small { color:#96a0b2;font-size:.73rem; }.medicine-mark { display:grid;place-items:center;width:2.25rem;height:2.25rem;border-radius:.55rem;background:#edf0ff;color:#5e69da;font-size:.82rem;font-weight:800; }.medicine-mark.orange { background:#fff3e7;color:#e68a36; }.medicine-mark.purple { background:#f4edff;color:#9462d7; }.medicine-mark.red { background:#ffebed;color:#de5b61; }.unit { color:#96a0b2;font-size:.76rem; }.expired-count { color:#d95a60;font-weight:700; }.status-pill { display:inline-flex;align-items:center;gap:.35rem;padding:.34rem .55rem;border-radius:1rem;font-size:.73rem;font-weight:700; }.status-pill i { width:.38rem;height:.38rem;border-radius:50%;background:currentColor; }.status-pill.healthy { background:#eaf9f0;color:#27965e; }.status-pill.low { background:#fff6df;color:#c98a12; }.status-pill.expired { background:#ffebec;color:#d34f55; }.actions-heading,.more-action { width:2.5rem; }.more-action button { border:0;background:transparent;color:#98a2b4;cursor:pointer;letter-spacing:.1em; }
+.smart-features { display:flex;justify-content:space-between;align-items:center;gap:2rem;padding:1.1rem 1.3rem;margin-top:1.35rem; }.features-intro { gap:.7rem; }.sparkle { display:grid;place-items:center;width:2.25rem;height:2.25rem;border-radius:50%;background:#eef0ff;color:#6570dc; }.indicator-list { display:flex;gap:1.4rem; }.indicator-list>div { gap:.5rem; }.indicator { width:.58rem;height:.58rem;border-radius:50%; }.indicator.healthy { background:#28a96a; }.indicator.low { background:#e5a421; }.indicator.expired { background:#df5960; }.indicator-list strong,.indicator-list small { display:block; }.indicator-list strong { font-size:.76rem; }.indicator-list small { color:#929caf;font-size:.69rem; }.visually-hidden { position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap; }
+@media (max-width:950px) { .summary-grid { grid-template-columns:repeat(2,1fr); }.smart-features { align-items:flex-start;flex-direction:column;gap:1rem; }.indicator-list { flex-wrap:wrap;gap:.8rem 1.25rem; } }@media (max-width:560px) { .inventory-page { padding:1rem; }.page-heading,.panel-heading { align-items:flex-start;flex-direction:column; }.add-button,.search-box { width:100%; }.add-button { text-align:center; }.summary-grid { grid-template-columns:1fr; }.summary-card { padding:1rem; }.panel-heading,th,td { padding-left:1rem;padding-right:1rem; } }
+
+/* The application toggles dark mode on the html element with data-bs-theme="dark". */
+:host-context(html[data-bs-theme="dark"]) {
+  .inventory-page { --ink:#e8ecf7; --muted:#a6b0c5; --line:#2a3345; background:#151b27; }
+  .summary-card,.inventory-panel,.smart-features { background:#202837; border-color:var(--line); box-shadow:0 8px 20px rgba(0,0,0,.18); }
+  .summary-card p,.heading-copy,.panel-heading p,.features-intro p { color:var(--muted); }
+  .summary-card span,.medicine-cell small,.unit,.indicator-list small { color:#8995aa; }
+  .card-icon,.sparkle { background:#2a3150; color:#aeb7ff; }
+  .summary-card.available .card-icon { background:#183c31; color:#67d99c; }
+  .summary-card.low .card-icon { background:#493918; color:#f2c65d; }
+  .summary-card.expired .card-icon { background:#48262e; color:#ff8c93; }
+  .panel-heading,th,td { border-color:var(--line); }
+  th { color:#9eabc2; }
+  td { color:#c1c9d9; }
+  .search-box { border-color:#3a455b; background:#192131; color:#aeb8cc; }
+  .search-box input { background:transparent; color:var(--ink); }
+  .search-box input::placeholder { color:#7f8ba1; }
+  .medicine-cell strong { color:var(--ink); }
+  .medicine-mark { background:#2a3150; color:#aeb7ff; }
+  .medicine-mark.orange { background:#49301f; color:#ffb46b; }
+  .medicine-mark.purple { background:#372b52; color:#c29aff; }
+  .medicine-mark.red { background:#48262e; color:#ff9298; }
+  .status-pill.healthy { background:#173d30; color:#6bdd9e; }
+  .status-pill.low { background:#4a3916; color:#f2c459; }
+  .status-pill.expired { background:#4c252c; color:#ff8f96; }
+  .expired-count { color:#ff9198; }
+  .more-action button { color:#a3aec1; }
+}

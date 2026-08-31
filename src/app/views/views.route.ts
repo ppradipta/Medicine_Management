@@ -4,6 +4,7 @@ import { TonAi } from '@/app/views/ton-ai/ton-ai'
 import { Calendar } from '@/app/views/calendar/calendar'
 import { Directory } from '@/app/views/directory/directory'
 import { Charts } from '@/app/views/charts/charts'
+import { Inventory } from './my-components/inventory/inventory'
 
 export const VIEWS_ROUTES: Routes = [
   {
@@ -65,5 +66,10 @@ export const VIEWS_ROUTES: Routes = [
     path: '',
     loadChildren: () =>
       import('./my-components/medicine-list/medicine-list.route').then((mod) => mod.MEDICINE_LIST_ROUTES),
+  },
+  {
+    path: 'inventory',
+    component: Inventory,
+    data: { title: 'Inventory' },
   },
 ]

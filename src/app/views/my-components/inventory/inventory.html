@@ -1,0 +1,22 @@
+<app-bread-crumb />
+
+<main class="inventory-page">
+  <section class="page-heading">
+    <div>
+      <h1>Inventory</h1><p class="heading-copy">Keep a clear view of your medicine stock and items that need attention.</p></div>
+  </section>
+  <section class="summary-grid" aria-label="Inventory summary">
+    @for (card of summaryCards; track card.label) {
+      <article class="summary-card" [class]="'summary-card ' + card.tone"><div class="card-icon" aria-hidden="true">{{ card.icon }}</div><div><p>{{ card.label }}</p><strong>{{ card.value }}</strong><span>{{ card.note }}</span></div></article>
+    }
+  </section>
+  <section class="inventory-panel">
+    <div class="panel-heading"><div><p>Current quantities across your pharmacy.</p></div><label class="search-box"><span aria-hidden="true">⌕</span><input type="search" placeholder="Search medicine" aria-label="Search medicine" /></label></div>
+    <div class="table-wrap"><table><thead><tr><th>Medicine</th><th>Available</th><th>Reserved</th><th>Expired</th><th>Status</th></tr></thead><tbody>
+      @for (medicine of medicines; track medicine.name) {
+        <tr><td><div class="medicine-cell"><span class="medicine-mark" [class]="medicine.tone">{{ medicine.initial }}</span><div><strong>{{ medicine.name }}</strong><small>{{ medicine.batch }}</small></div></div></td><td><strong>{{ medicine.available }}</strong> <span class="unit">units</span></td><td>{{ medicine.reserved }}</td><td [class.expired-count]="medicine.expired > 0">{{ medicine.expired }}</td><td><span class="status-pill" [class]="medicine.statusClass"><i></i>{{ medicine.status }}</span></td></tr>
+      }
+    </tbody></table></div>
+  </section>
+  <section class="smart-features"><div class="features-intro"><span class="sparkle">✦</span><div><h2>Smart stock indicators</h2><p>Scan the colour labels to prioritise stock checks.</p></div></div><div class="indicator-list"><div><span class="indicator healthy"></span><div><strong>Healthy stock</strong><small>Enough medicine available</small></div></div><div><span class="indicator low"></span><div><strong>Low stock</strong><small>Reorder soon</small></div></div><div><span class="indicator expired"></span><div><strong>Expired stock</strong><small>Remove from sale</small></div></div></div></section>
+</main>
